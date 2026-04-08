@@ -39,19 +39,19 @@ async function checkWeather(city) {
     const weatherMain = data.weather[0].main;
 
     if (weatherMain === "Clouds") {
-      weatherIcon.src = "images/clouds.png";
+      weatherIcon.src = "clouds.png";
     } else if (weatherMain === "Clear") {
-      weatherIcon.src = "images/clear.png";
+      weatherIcon.src = "clear.png";
     } else if (weatherMain === "Rain") {
-      weatherIcon.src = "images/rain.png";
+      weatherIcon.src = "rain.png";
     } else if (weatherMain === "Drizzle") {
-      weatherIcon.src = "images/drizzle.png";
+      weatherIcon.src = "drizzle.png";
     } else if (weatherMain === "Mist" || weatherMain === "Haze" || weatherMain === "Fog") {
-      weatherIcon.src = "images/mist.png";
+      weatherIcon.src = "mist.png";
     } else if (weatherMain === "Snow") {
-      weatherIcon.src = "images/snow.png";
+      weatherIcon.src = "snow.png";
     } else {
-      weatherIcon.src = "images/clear.png";
+      weatherIcon.src = "clear.png";
     }
 
     weatherBox.style.display = "block";
