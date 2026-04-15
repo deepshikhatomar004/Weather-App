@@ -1,3 +1,4 @@
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -5,48 +6,60 @@
   box-sizing: border-box;
 }
 
+/* Body */
 body {
   background: linear-gradient(135deg, #667eea, #764ba2);
+
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* changed */
-  padding: 15px; /* added for mobile spacing */
+
+  min-height: 100vh;
+  min-height: 100dvh; /* mobile fix */
+
+  padding: 20px;
 }
 
 /* Card */
 .card {
   width: 100%;
-  max-width: 350px; /* important for responsiveness */
+  max-width: 400px;
+
   background: linear-gradient(135deg, #00f5d4, #6a5acd);
   backdrop-filter: blur(15px);
+
   padding: 25px;
   border-radius: 20px;
   text-align: center;
   color: white;
+
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 /* Search */
 .search {
   display: flex;
+  width: 100%;
   gap: 10px;
 }
 
 .search input {
   flex: 1;
-  padding: 10px;
+  width: 100%;
+
+  padding: 12px;
   border-radius: 30px;
   border: none;
   outline: none;
-  font-size: 14px;
+
+  font-size: 16px; /* mobile zoom fix */
 }
 
 .search button {
   border: none;
   background: white;
   border-radius: 50%;
-  padding: 10px;
+  padding: 12px;
   cursor: pointer;
 }
 
@@ -57,12 +70,13 @@ body {
 }
 
 .weather-icon {
-  width: 80px; /* slightly smaller for mobile */
+  width: 90px;
   margin: 10px 0;
 }
 
 .temp {
-  font-size: 35px;
+  font-size: 36px;
+  font-weight: 600;
 }
 
 .city {
@@ -79,7 +93,7 @@ body {
 .col {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .col img {
@@ -95,7 +109,9 @@ body {
 }
 
 @keyframes blink {
-  50% { opacity: 0.5; }
+  50% {
+    opacity: 0.5;
+  }
 }
 
 /* Error */
@@ -105,36 +121,22 @@ body {
   margin-top: 15px;
 }
 
-/* 🔥 Responsive Breakpoints */
-
-/* Tablets */
+/* Tablet */
 @media (max-width: 768px) {
   .card {
-    padding: 20px;
+    padding: 22px;
   }
 
   .temp {
     font-size: 32px;
-  }
-
-  .city {
-    font-size: 20px;
   }
 }
 
 /* Mobile */
 @media (max-width: 480px) {
   .card {
-    padding: 18px;
-  }
-
-  .search {
-    flex-direction: column; /* stack input + button */
-  }
-
-  .search button {
-    width: 100%;
-    border-radius: 30px;
+    max-width: 100%;
+    padding: 20px;
   }
 
   .details {
