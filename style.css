@@ -10,15 +10,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh; /* changed */
+  padding: 15px; /* added for mobile spacing */
 }
 
 /* Card */
 .card {
-  width: 350px;
- background: linear-gradient(135deg, #00f5d4, #6a5acd);
+  width: 100%;
+  max-width: 350px; /* important for responsiveness */
+  background: linear-gradient(135deg, #00f5d4, #6a5acd);
   backdrop-filter: blur(15px);
-  padding: 30px;
+  padding: 25px;
   border-radius: 20px;
   text-align: center;
   color: white;
@@ -37,6 +39,7 @@ body {
   border-radius: 30px;
   border: none;
   outline: none;
+  font-size: 14px;
 }
 
 .search button {
@@ -54,16 +57,16 @@ body {
 }
 
 .weather-icon {
-  width: 100px;
+  width: 80px; /* slightly smaller for mobile */
   margin: 10px 0;
 }
 
 .temp {
-  font-size: 40px;
+  font-size: 35px;
 }
 
 .city {
-  font-size: 25px;
+  font-size: 22px;
 }
 
 /* Details */
@@ -76,18 +79,18 @@ body {
 .col {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .col img {
-  width: 30px;
+  width: 25px;
 }
 
 /* Loading */
 .loading {
   display: none;
   margin-top: 20px;
-  font-size: 18px;
+  font-size: 16px;
   animation: blink 1s infinite;
 }
 
@@ -102,3 +105,49 @@ body {
   margin-top: 15px;
 }
 
+/* 🔥 Responsive Breakpoints */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .card {
+    padding: 20px;
+  }
+
+  .temp {
+    font-size: 32px;
+  }
+
+  .city {
+    font-size: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .card {
+    padding: 18px;
+  }
+
+  .search {
+    flex-direction: column; /* stack input + button */
+  }
+
+  .search button {
+    width: 100%;
+    border-radius: 30px;
+  }
+
+  .details {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .temp {
+    font-size: 28px;
+  }
+
+  .city {
+    font-size: 18px;
+  }
+}
